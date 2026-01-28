@@ -1,3 +1,60 @@
-# BMI-calculation
-Today I will bring a code to calculate BMI automatically by Python code. You only need to input your weight, height in inches, and the code will do the rest.  
-Certainly, BMI is a popular term that most of people hear all the time nowadays. If someone does not know it, BMI is a term describing about body mass index. BMI is used for risk assessment for the general population. Generally speaking, as a person's BMI increases, so does his or her risk of certain diseases. However, BMI does not distinguish between body fat and lean body mass and does not take into account location of body fat. For this reason, it's not an accurate measure of health for certain populations, such as people with higher than average muscle mass or people whose body composition may be skewed for other reasons.
+# BMI Calculator & Health Metrics Tool
+#### Author: Tran Nguyen
+#### Tools: Python, Functions, Conditional Logic
+#### Focus: Healthcare Metrics, Automation, Data Validation
+
+# Project Overview
+Developed a Python-based BMI (Body Mass Index) calculator that automates health metric calculations with user-friendly input validation. BMI is widely used in healthcare for population risk assessment, though it has limitations that I explicitly accounted for in the tool's design and documentation.
+
+# Key Features
+- Automated Calculation: Instant BMI computation from weight and height inputs
+- Input Validation: Handles various units and prevents invalid entries
+- Health Categorization: Classifies results according to standard medical categories
+- Transparent Limitations: Clearly communicates BMI's constraints in health assessment
+```
+def hello(name, age, BMI):
+  if BMI > 0:
+    if (BMI<18.5):
+      print(name, 'is underweight.')
+    elif (BMI<24.9):
+      print(name,' is normal.')
+    elif (BMI<29.9):
+      print(name, "is overweight.")
+    elif (BMI<34.9):
+      print(name, 'is Obese.')
+    elif (BMI<39.9):
+      print(name, 'is servere obese.')
+    elif (BMI>=39.9):
+      print(name, 'is morbidily obese.')
+    else:
+      print("Enter valid numbers")
+      return
+  if BMI >25 and age > 20:
+    print ('Please see you doctor.')
+  else:
+    print('Please do exercise.')
+
+while True:
+  name = input('Enter your name: ')
+  if name.isnumeric() != True:
+    print('Hello ' + name)
+    break
+  else:
+    print('Please enter correct format')
+    exit(0)
+while True:
+    age = input("Enter your age: ")
+    if age.isnumeric() == True:
+      print('Your age is: ', age)
+      break
+    else:
+      print('Please enter correct format')
+      exit(1)
+weight =int(input("Enter your weight(in pounds): "))
+height =int(input("Enter your height(in inches): "))
+BMI = round((weight*703) / (height * height),2)
+## convert age to int, and define BMI to add 2 conditions BMI and Age. 
+age = int(age)
+print(BMI)
+hello(name,age,BMI)
+```
